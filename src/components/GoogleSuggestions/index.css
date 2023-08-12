@@ -51,6 +51,7 @@
 .search-box {
   width: 100%;
   outline: 0px;
+  height: 24px;
 }
 
 .unordered-list {

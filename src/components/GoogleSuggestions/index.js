@@ -7,7 +7,11 @@ import SuggestionItem from '../SuggestionItem'
 
 class GoogleSuggestions extends Component {
   state = {
-    searchInput: ' ',
+    searchInput: '',
+  }
+
+  updateSuggestion = suggestion => {
+    this.setState({searchInput: suggestion})
   }
 
   onChangeSearchInput = event => {
@@ -17,9 +21,10 @@ class GoogleSuggestions extends Component {
   render() {
     const {suggestionsList} = this.props
     const {searchInput} = this.state
-    const value = searchInput.toLowerCase()
-    const finalResults = suggestionsList.filter(eachUser =>
-      eachUser.suggestion.includes(value),
+    const finalResults = suggestionsList.filter(eachSuggestion =>
+      eachSuggestion.suggestion
+        .toLowerCase()
+        .includes(searchInput.toLowerCase()),
     )
 
     return (
@@ -45,6 +50,7 @@ class GoogleSuggestions extends Component {
                 className="search-box"
                 type="search"
                 onChange={this.onChangeSearchInput}
+                value={searchInput}
               />
             </div>
           </div>
@@ -54,6 +60,7 @@ class GoogleSuggestions extends Component {
                 <SuggestionItem
                   suggestionList={eachSuggestion}
                   key={eachSuggestion.id}
+                  updateSuggestion={this.updateSuggestion}
                 />
               ))}
             </ul>
