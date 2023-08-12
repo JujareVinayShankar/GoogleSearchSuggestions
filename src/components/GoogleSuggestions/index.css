@@ -1,0 +1,72 @@
+/* Write your CSS here */
+.bg-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-img-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4%;
+  margin-top: 4%;
+}
+
+.google-img {
+  width: 34%;
+  text-align: center;
+}
+
+.total-search-box {
+  box-shadow: 0px 4px 16px 0px;
+  cursor: pointer;
+  border-radius: 18px;
+  padding: 8px;
+  margin-bottom: 4%;
+}
+
+.search-box-container {
+  display: flex;
+  justify-content: flex-start;
+  justify-content: center;
+  width: 100%;
+  height: 18px;
+}
+
+.img-container {
+  width: 4%;
+  margin-right: 4px;
+  margin-top: 2px;
+}
+
+.search-icon {
+  width: 100%;
+}
+
+.input-container {
+  width: 96%;
+}
+
+.search-box {
+  width: 100%;
+  outline: 0px;
+}
+
+.unordered-list {
+  list-style-type: none;
+}
+
+@media (max-width: 767px) {
+  .total-search-box {
+    width: 80%;
+    align-self: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .total-search-box {
+    width: 40%;
+    align-self: center;
+  }
+}
